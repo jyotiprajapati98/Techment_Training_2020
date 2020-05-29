@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author hp
+ * @author jyoti
  *
  */
 package com.techment.arrayOperations;
