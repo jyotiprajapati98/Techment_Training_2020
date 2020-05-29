@@ -1,0 +1,12 @@
+package com.TechDay4;
+
+import org.apache.log4j.Logger;
+
+public class AppDemo {
+	static Logger logger =Logger.getLogger("AppDemo.class");
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

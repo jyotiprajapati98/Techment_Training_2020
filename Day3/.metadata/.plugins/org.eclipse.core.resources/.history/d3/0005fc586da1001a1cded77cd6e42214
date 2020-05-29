@@ -1,0 +1,32 @@
+package com.TechDay4;
+
+import java.io.IOException;
+
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+
+
+public class AppDemo {
+	
+	//static before the public static method 
+	
+	//write Class name
+	static Logger logger =Logger.getLogger("AppDemo.class");
+	
+	public static void main(String[] args) throws IOException {
+		
+		//it can be any type
+		FileAppender fileappender =new FileAppender(new PatternLayout(),"mylog.txt");
+		
+		//add appender by the method
+		
+		logger.addAppender(fileappender);
+		logger.info("this is info");
+		logger.debug("this is debug message");
+		System.out.println("Successfull");
+		
+		
+	}
+
+}
