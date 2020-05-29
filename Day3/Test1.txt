@@ -1,0 +1,9 @@
+In day3 we are giving simple test with some questions based on previous 2 days sessions -
+1) Features of java
+2) what is plafform independent.
+3) real time example of stack and queue.
+4)linked list , there type and use of linked list.
+5)write a program to print pattern-
+123
+12
+1
