@@ -1,0 +1,446 @@
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+> use techmentlearn
+switched to db techmentlearn
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+> db.createCollection("employee")
+{ "ok" : 1 }
+
+> show dbs
+admin          0.000GB
+config         0.000GB
+local          0.000GB
+techmentlearn  0.000GB
+
+> show collections
+employee
+
+> db.createCollection("student")
+{ "ok" : 1 }
+> db.createCollection("address")
+{ "ok" : 1 }
+> show collections
+address
+employee
+student
+
+
+>db.address.drop()
+true
+
+>show collections
+employee
+student
+
+>db.employee.insert( {"name":'ravi', "dept":'Development'} )
+WriteResult({ "nInserted" : 1 })
+> db.employee.insert( {"name":'sachin', "dept":'mech'} )
+WriteResult({ "nInserted" : 1 })
+
+
+> db.employee.insert({ 'name':'jyoti' ,'dept':'development'})
+WriteResult({ "nInserted" : 1 })
+
+
+> db.employee.find()
+{ "_id" : ObjectId("5ed5d8ffc8989ef100b1e38f"), "name" : "ravi", "dept" : "Development" }
+{ "_id" : ObjectId("5ed5d936c8989ef100b1e390"), "name" : "sachin", "dept" : "mech" }
+{ "_id" : ObjectId("5ed5d955c8989ef100b1e391") }
+{ "_id" : ObjectId("5ed5d9afc8989ef100b1e392"), "name" : "jyoti", "dept" : "development" }
+
+
+> db.student.insert(
+... {'_id':1,'name':'jyoti','dept':'cse'}
+... )
+WriteResult({ "nInserted" : 1 })
+
+
+> db.employee.find().pretty()
+{
+        "_id" : ObjectId("5ed5d8ffc8989ef100b1e38f"),
+        "name" : "ravi",
+        "dept" : "Development"
+}
+{
+        "_id" : ObjectId("5ed5d936c8989ef100b1e390"),
+        "name" : "sachin",
+        "dept" : "mech"
+}
+{ "_id" : ObjectId("5ed5d955c8989ef100b1e391") }
+{
+        "_id" : ObjectId("5ed5d9afc8989ef100b1e392"),
+        "name" : "jyoti",
+        "dept" : "development"
+}
+
+> db.student.find({'dept':'cse'}).pretty()
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+
+
+> db.student.find({
+... '_id':{$eq:2}}).pretty()
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+
+> db.student.find({ '_id':{$gte:2}}).pretty()
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+
+> db.createCollection("trainee")
+{ "ok" : 1 }
+
+> db.trainee.insert( {"_id":1,"name":"jyoti","dept":"web","salary":20000,"age":22})
+WriteResult({ "nInserted" : 1 })
+
+> db.trainee.find()
+{ "_id" : 1, "name" : "jyoti", "dept" : "web", "salary" : 20000, "age" : 22 }
+{ "_id" : 2, "name" : "deva", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 3, "name" : "ankur", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 4, "name" : "siya", "dept" : "app", "salary" : 35000, "age" : 25 }
+>
+
+> db.student.find({ '_id':{$lte:2}}).pretty()
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+
+> db.student.find({ '_id':{$gte:2}}).pretty()
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+
+> db.student.find({ '_id':{$gt:2}}).pretty()
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+
+> db.student.find({ '_id':{$lt:2}}).pretty()
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+>
+
+> db.trainee.find({ "salary":{$lt:40000}}).pretty()
+{
+        "_id" : 1,
+        "name" : "jyoti",
+        "dept" : "web",
+        "salary" : 20000,
+        "age" : 22
+}
+{
+        "_id" : 2,
+        "name" : "deva",
+        "dept" : "app",
+        "salary" : 25000,
+        "age" : 23
+}
+{
+        "_id" : 3,
+        "name" : "ankur",
+        "dept" : "app",
+        "salary" : 25000,
+        "age" : 23
+}
+{
+        "_id" : 4,
+        "name" : "siya",
+        "dept" : "app",
+        "salary" : 35000,
+        "age" : 25
+}
+
+> db.trainee.find({ $or:[{'salary':25000},{'dept':'web'}]})
+{ "_id" : 1, "name" : "jyoti", "dept" : "web", "salary" : 20000, "age" : 22 }
+{ "_id" : 2, "name" : "deva", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 3, "name" : "ankur", "dept" : "app", "salary" : 25000, "age" : 23 }
+>
+
+> db.trainee.find({ $and:[{'salary':20000},{'dept':'web'}]})
+{ "_id" : 1, "name" : "jyoti", "dept" : "web", "salary" : 20000, "age" : 22 }
+>
+
+
+> db.trainee.find({ 'salary':{$ne:25000}}).pretty()
+{
+        "_id" : 1,
+        "name" : "jyoti",
+        "dept" : "web",
+        "salary" : 20000,
+        "age" : 22
+}
+{
+        "_id" : 4,
+        "name" : "siya",
+        "dept" : "app",
+        "salary" : 35000,
+        "age" : 25
+}
+
+> db.trainee.find().limit(2).pretty()
+{
+        "_id" : 1,
+        "name" : "jyoti",
+        "dept" : "web",
+        "salary" : 20000,
+        "age" : 22
+}
+{
+        "_id" : 2,
+        "name" : "deva",
+        "dept" : "app",
+        "salary" : 25000,
+        "age" : 23
+}
+
+> db.student.find({},{'id':0},{"name":1}).pretty()
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+> db.student.find({},{'id':1},{"name":1}).pretty()
+{ "_id" : 1 }
+{ "_id" : 2 }
+{ "_id" : 3 }
+{ "_id" : 4 }
+{ "_id" : 5 }
+> db.student.find({},{'id':1},{"name":0}).pretty()
+{ "_id" : 1 }
+{ "_id" : 2 }
+{ "_id" : 3 }
+{ "_id" : 4 }
+{ "_id" : 5 }
+> db.student.find({},{'id':0},{"name":0}).pretty()
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+> db.student.find({},{'id':1},{"name":0}).pretty()
+{ "_id" : 1 }
+{ "_id" : 2 }
+{ "_id" : 3 }
+{ "_id" : 4 }
+{ "_id" : 5 }
+> db.student.find({},{'id':1},{"name":1}).pretty()
+{ "_id" : 1 }
+{ "_id" : 2 }
+{ "_id" : 3 }
+{ "_id" : 4 }
+{ "_id" : 5 }
+> db.student.find({},{'id':0},{"name":1}).pretty()
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+> db.student.find({},{'_id':0},{"name":1}).pretty()
+{ "name" : "jyoti", "dept" : "cse" }
+{ "name" : "ramesh", "dept" : "cse" }
+{ "name" : "mahesh", "dept" : "cse" }
+{ "name" : "suresh", "dept" : "mech" }
+{ "name" : "neeta", "dept" : "ece" }
+> db.student.find({},{'_id':0,"name":1}).pretty()
+{ "name" : "jyoti" }
+{ "name" : "ramesh" }
+{ "name" : "mahesh" }
+{ "name" : "suresh" }
+{ "name" : "neeta" }
+> db.student.find({},{'_id':0,"name":1,"dept":1}).pretty()
+{ "name" : "jyoti", "dept" : "cse" }
+{ "name" : "ramesh", "dept" : "cse" }
+{ "name" : "mahesh", "dept" : "cse" }
+{ "name" : "suresh", "dept" : "mech" }
+{ "name" : "neeta", "dept" : "ece" }
+> db.student.find({},{'_id':0,"name":1,"dept":0}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Projection cannot have a mix of inclusion and exclusion.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.student.find({},{'_id':0,"name":1,"dept":1}).pretty()
+{ "name" : "jyoti", "dept" : "cse" }
+{ "name" : "ramesh", "dept" : "cse" }
+{ "name" : "mahesh", "dept" : "cse" }
+{ "name" : "suresh", "dept" : "mech" }
+{ "name" : "neeta", "dept" : "ece" }
+>
+
+> db.student.find({}).pretty()
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+>
+
+> db.student.find({},{'_id':0,"name":0,"dept":0}).pretty()
+{ }
+{ }
+{ }
+{ }
+{ }
+
+> db.trainee.find().sort({"_id":1})
+{ "_id" : 1, "name" : "jyoti", "dept" : "web", "salary" : 20000, "age" : 22 }
+{ "_id" : 2, "name" : "deva", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 3, "name" : "ankur", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 4, "name" : "siya", "dept" : "app", "salary" : 35000, "age" : 25 }
+> db.trainee.find().sort({"_id":-1})
+{ "_id" : 4, "name" : "siya", "dept" : "app", "salary" : 35000, "age" : 25 }
+{ "_id" : 3, "name" : "ankur", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 2, "name" : "deva", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 1, "name" : "jyoti", "dept" : "web", "salary" : 20000, "age" : 22 }
+
+> db.trainee.find().sort({"_id":-1}).limit(2).pretty()
+{
+        "_id" : 4,
+        "name" : "siya",
+        "dept" : "app",
+        "salary" : 35000,
+        "age" : 25
+}
+{
+        "_id" : 3,
+        "name" : "ankur",
+        "dept" : "app",
+        "salary" : 25000,
+        "age" : 23
+}
+
+> db.trainee.find().sort({"name":-1}).limit(2).pretty()
+{
+        "_id" : 4,
+        "name" : "siya",
+        "dept" : "app",
+        "salary" : 35000,
+        "age" : 25
+}
+{
+        "_id" : 1,
+        "name" : "jyoti",
+        "dept" : "web",
+        "salary" : 20000,
+        "age" : 22
+}
+> db.trainee.find().sort({"name":1}).limit(2).pretty()
+{
+        "_id" : 3,
+        "name" : "ankur",
+        "dept" : "app",
+        "salary" : 25000,
+        "age" : 23
+}
+{
+        "_id" : 2,
+        "name" : "deva",
+        "dept" : "app",
+        "salary" : 25000,
+        "age" : 23
+}
+
+
+> db.trainee.find().sort({"_id":-1}).limit(2).sort({"_id":1}).pretty()
+{
+        "_id" : 1,
+        "name" : "jyoti",
+        "dept" : "web",
+        "salary" : 20000,
+        "age" : 22
+}
+{
+        "_id" : 2,
+        "name" : "deva",
+        "dept" : "app",
+        "salary" : 25000,
+        "age" : 23
+}
+
+> db.student.find().skip(2).sort({"_id":1}).pretty()
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+>
+
+> db.student.find().skip(2).sort({"_id":-1}).pretty()
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 1, "name" : "jyoti", "dept" : "cse" }
+>
+
+> db.student.update({'_id':1},{$set:{'name':'mahi'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find()
+{ "_id" : 1, "name" : "mahi", "dept" : "cse" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+
+> db.student.update({'_id':1},{$set:{'dept':'etc'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find()
+{ "_id" : 1, "name" : "mahi", "dept" : "etc" }
+{ "_id" : 2, "name" : "ramesh", "dept" : "cse" }
+{ "_id" : 3, "name" : "mahesh", "dept" : "cse" }
+{ "_id" : 4, "name" : "suresh", "dept" : "mech" }
+{ "_id" : 5, "name" : "neeta", "dept" : "ece" }
+>
+
+> db.student.update({"_id":{$gt:2}},{$set:{'dept':'hr'}},{"multi":true})
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 3 })
+> db.student.find()
+{ "_id" : 1, "name" : "mahi", "dept" : "etc" }
+{ "_id" : 2, "name" : "sanjju", "dept" : "cse" }
+{ "_id" : 3, "name" : "sanjju", "dept" : "hr" }
+{ "_id" : 4, "name" : "suresh", "dept" : "hr" }
+{ "_id" : 5, "name" : "neeta", "dept" : "hr" }
+>
+
+
+> db.student.remove({'_id':2})
+WriteResult({ "nRemoved" : 1 })
+> db.student.find()
+{ "_id" : 1, "name" : "mahi", "dept" : "etc" }
+{ "_id" : 3, "name" : "sanjju", "dept" : "hr" }
+{ "_id" : 4, "name" : "suresh", "dept" : "hr" }
+{ "_id" : 5, "name" : "neeta", "dept" : "hr" }
+>
+
+> db.trainee.aggregate( {$group: {"_id":"$dept","noofstudent":{$sum:1} }})
+{ "_id" : "web", "noofstudent" : 1 }
+{ "_id" : "app", "noofstudent" : 3 }
+>
+
+> db.trainee.aggregate( {$group: {"_id":"$dept","total":{$sum:"$salary"} }})
+{ "_id" : "web", "total" : 20000 }
+{ "_id" : "app", "total" : 85000 }
+
+> db.trainee.aggregate( {$group: {"_id":"$dept","total":{$sum:"$salary"},"maxAge":{$max:"$age"} }})
+{ "_id" : "web", "total" : 20000, "maxAge" : 22 }
+{ "_id" : "app", "total" : 85000, "maxAge" : 25 }
+
+> db.trainee.aggregate( {$group: {"_id":"$dept","total":{$sum:"$salary"},"maxAge":{$max:"$age"},"minAge":{$min:"$age"} }})
+{ "_id" : "web", "total" : 20000, "maxAge" : 22, "minAge" : 22 }
+{ "_id" : "app", "total" : 85000, "maxAge" : 25, "minAge" : 23 }
+>
+
+> db.trainee.aggregate(
+... {$match:{"_id":{$gt:2}}})
+{ "_id" : 3, "name" : "ankur", "dept" : "app", "salary" : 25000, "age" : 23 }
+{ "_id" : 4, "name" : "siya", "dept" : "app", "salary" : 35000, "age" : 25 }
+>
+
+
+
