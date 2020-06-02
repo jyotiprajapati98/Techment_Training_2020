@@ -1,0 +1,170 @@
+Assessment -1
+
+1) find the value of b
+int a=7
+ i)int b=a++ - ++a - a++ + ++a -a--
+
+solution - int b = 7 - 9 - 9 + 11- 11 
+	int b =-11
+
+ ii)int b=--a + a-- + ++a + a-- -++a 
+solution - int b = 6 + 6 + 6 + 6 - 6 = 18
+
+
+2) print the pattern
+ *****
+ *   *
+ *   *
+ *   *
+ *****
+
+public class pattern{
+	public static void main(String args){
+		int rows =5;
+		for(int i=0;i<=rows;i++)
+			for(int j=0;j<=rows;j++)
+				if(i==1 || i==n || j==1 ||j==n)
+					System.out.print("*");
+				else
+					System.out.print(" ");
+			System.out.println();
+
+}
+}
+
+3)write a Program to Add Two Matrix take the input from user
+
+import java.util.*;
+public class AddMatrix{
+	public static void main(String args[]){
+		int firstrow,firstcol,secondrow,secondcol;
+		Scanner scan=new Scanner(System.in);
+
+		System.out.println("enter first matrix row :");
+		firstrow=scan.nextInt();
+		
+		System.out.println("enter first matrix cloumn :");
+		firstcol=scan.nextInt();
+
+		System.out.println("enter second matrix row :");
+		secondrow=scan.nextInt();
+
+		System.out.println("enter second matrix col :");
+		secondcol=scan.nextInt();
+
+	if(firstrow==secondrow && firstcol==secondcol)
+	{
+		
+		int first[][]=new int[fisrtrow][fisrtcol];
+		int second[][]=new int[secondrow][secondcol];
+		int sum[][]=new int[secondrow][secondcol];
+
+		System.out.println(" enter fisrt elements ")
+		for(int i=0;i<p;i++)
+			for(int j=0;j<q;j++)
+				fisrt[i][j]=scan.nextInt();
+
+		System.out.println(" enter second elements ")
+		for(int i=0;i<p;i++)
+			for(int j=0;j<q;j++)
+				second[i][j]=scan.nextInt();
+
+//fisrt print matrix 
+		
+		System.out.println("first matrix");
+		for(int i=0;i<firstrow;i++)
+			for(int j=0;j<firstcol;j++)
+				System.out.print(fisrt[i][j] + " ");
+
+			System.out.println("");
+		
+//seond matrix print
+		System.out.println("second matrix");
+		for(int i=0;i<secondrow;i++)
+			for(int j=0;j<secondcol;j++)
+				System.out.print(second[i][j] + " ");
+
+			System.out.println("");
+// addition of matix here 
+		
+		for(int i=0;i<firstrow;i++)
+			for(int j=0;j<secondcol;j++)
+				for(int k=0;k<firstcol;k++)
+					sum[i][j]=fisrt[i][j]+second[j][j];
+
+
+		System.out.println(" sum of matix is ");
+		for (int i = 0; i < firstrow; i++) 
+            
+                	for (int j = 0; j < secondcol; j++) 
+                
+                   		 System.out.print(sum[i][j]+" ");
+                
+                	System.out.println("");
+            
+
+	}
+	
+
+	}
+}
+
+
+
+4)Array Program
+  i) odd sum and even sum
+      
+     sample output
+      eg:[2,6,7,9,4]
+        even=12
+        odd=16
+solution 
+
+public class evenodd{
+	public static void main(String args[])
+	{
+		int array[]={2,6,7,9,4};
+		int even=0,odd=0;
+		
+		for(int i=0;i<array.length;i++){
+			if(array[i] / 2 == 0)
+				even=even+array[i];
+			else
+				odd=odd+array[i];
+	
+		}
+		System.out.println(" even "+even);
+		System.out.println(" odd"+odd);
+
+	}
+}
+
+
+  ii) pair of sum in a given array
+       sample output
+        eg:[2,5,1,6,3,4]
+         sum=8
+       pair(3,5)
+           (6,2)
+
+
+solution -
+
+public class pairSum{
+	public static void main(String args[])
+	{
+		int array[]={2,5,1,6,3,4};
+		int size=array.length;
+		int sum=8;
+		int temp=0;
+		
+		// loop for checking the pairs
+		for(int i=0;i<size;i++)
+			for(int j=i+1;j<size;j++)
+				if(array[i]+array[j]==sum)
+					System.out.println("pair("+array[i],array[j]+")");
+	}
+}
+
+--------------------------------------------------------------
+           
