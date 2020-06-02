@@ -1,0 +1,11 @@
+MongoDB installation & queries 
+creating db
+use db
+create collection - that is table
+insertion in collection 
+remove from collection 
+update collection 
+aggregate functions - max,min,sum,avg
+sort- assending(1),desending(-1)
+limit - 
+pattern 
