@@ -50,6 +50,8 @@ public class BirthMonth {
 			case 12:
 				System.out.println(" Your birth month is December ");
 				break;
+			default :
+				System.out.println(" Enter correct  number ");
 		}
 		
 	}
