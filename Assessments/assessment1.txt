@@ -127,7 +127,7 @@ public class evenodd{
 		int even=0,odd=0;
 		
 		for(int i=0;i<array.length;i++){
-			if(array[i] / 2 == 0)
+			if(array[i] % 2 == 0)
 				even=even+array[i];
 			else
 				odd=odd+array[i];
@@ -156,13 +156,13 @@ public class pairSum{
 		int array[]={2,5,1,6,3,4};
 		int size=array.length;
 		int sum=8;
-		int temp=0;
 		
 		// loop for checking the pairs
 		for(int i=0;i<size;i++)
 			for(int j=i+1;j<size;j++)
 				if(array[i]+array[j]==sum)
-					System.out.println("pair("+array[i],array[j]+")");
+				
+					System.out.println("pair("+array[i]+","+array[j]+")");
 	}
 }
 
