@@ -1,0 +1,6 @@
+what is linux
+history of linux
+architecture of linux OS
+features of linux
+file system of linux
+commonds of linux 
