@@ -1,0 +1,15 @@
+learn 
+1)real time problems before Agile and DevOps
+2)Aspects of DevOps
+  People- motivaated persons
+  Process - follow process
+  Tools - git,maven,jira
+
+3)Components of DevOps
+  a) Continuous Integration - jenkings,bamboo, 
+  b) Continuous Testing  - Junit
+  c) Continuous Delivery - docker,puppet
+  d) Continous Monitory - slunk,sensu
+  e) Continous build -meven,gradle
+
+4)what is cloud
