@@ -1,0 +1,75 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class MirrorMatrix_Ex_40 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan =new Scanner(System.in);
+		System.out.println("Enter the size of matrix ");
+		int size=scan.nextInt();
+		
+		if(size>2 && size<20) {
+			
+			int array[][]=new int[size][size];
+			System.out.println("enter the elements of matrix :");
+			
+			for(int i=0;i<size;i++) {
+				for(int j=0;j<size;j++) {
+					
+					array[i][j]=scan.nextInt();
+				}
+			}
+			
+			System.out.println("*****************************");
+			System.out.println("The Original Matrix");
+			System.out.println("*****************************");
+			
+			for(int i=0;i<size;i++) {
+				for(int j=0;j<size;j++) {
+					
+					System.out.print("  "+array[i][j]+" ");
+				}
+				System.out.println();
+			}
+			
+		
+		
+			//now making code for mirror matrix
+			int array1[][]=new int[size][size];
+			
+			for(int i=0;i<size;i++) {
+				int k=0;
+				
+				for(int j=size-1;j>=0;j--) {
+					
+					array1[i][k]=array[i][j];
+					k++;
+				}
+			}
+			
+			//printing the mirror matrix
+			System.out.println("*****************************");
+			System.out.println("The Mirror Matrix");
+			System.out.println("*****************************");
+			
+			for(int i=0;i<size;i++) {
+				
+				for(int j=0;j<size;j++) {
+					
+					System.out.print("  "+array1[i][j]+" ");
+				}
+				System.out.println("");
+			}
+		
+		
+		}//if is closed here 
+		else {
+			System.out.println("enter the in range values");
+		}
+		
+		
+	}
+
+}
