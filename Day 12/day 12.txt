@@ -1,0 +1,5 @@
+1)read some git commands and workshop things
+2)completing assessments-
+  MCQ on SQL
+  SQL queries
+  mongoDB queries.
