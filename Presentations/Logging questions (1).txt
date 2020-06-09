@@ -1,0 +1,124 @@
+1). What is log4j?
+Ans : log4j is a reliable, fast and flexible logging framework (APIs) written in Java, which is distributed under the Apache Software License.
+
+2). What are Pros and Cons of Logging?
+Ans : Logging is an important component of the software development. A well-written logging code offers quick debugging, easy maintenance, and structured storage of an application's runtime information.
+
+Logging does have its drawbacks also. It can slow down an application. If too verbose, it can cause scrolling blindness. To alleviate these concerns, log4j is designed to be reliable, fast and extensible.
+
+3). What is the purpose of Layout object?
+Layout Object − The layout layer of log4j architecture provides objects which are used to format logging information in different styles. It provides support to appender objects before publishing logging information.
+
+Layout objects play an important role in publishing logging information in a way that is human-readable and reusable.
+
+4). What is the purpose of Appender object?
+Appender Object − This is a lower-level layer of log4j architecture which provides Appender objects. The Appender object is responsible for publishing logging information to various preferred destinations such as a database, file, console, UNIX Syslog, etc.
+
+5). What is the purpose of Level object?
+Ans : Level Object - The Level object defines the granularity and priority of any logging information. There are seven levels of logging defined within the API: OFF, DEBUG, INFO, ERROR, WARN, FATAL, and ALL.
+
+6). What is the use of log4j.properties?
+Ans : The log4j.properties file is a log4j configuration file which keeps properties in key-value pairs. By default, the LogManager looks for a file named log4j.properties in the CLASSPATH.
+
+7) State level of logger with priority?
+Ans : ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF.
+
+8). What is the purpose of Log4j filters?
+ANs : Filter objects in log4j decide whether logging request should be handled by a particular Appender or ignored. 
+Let’s say we want to log only INFO and FATAL events but not WARN and ERROR events. In these scenarios, we can take help of log4j Filters. We can extend org.apache.log4j.spi.Filter class and implements it’s decide(LoggingEvent event) method to provide custom filtering capabilities.
+
+-----------------------------------Sample program -------------------------------------
+
+package com.journaldev.log4j.filters;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.spi.Filter;
+import org.apache.log4j.spi.LoggingEvent;
+
+public class MyLog4jFilter extends Filter {
+
+	/**
+	 * My custom filter to only log INFO and FATAL events
+	 */
+	@Override
+	public int decide(LoggingEvent event) {
+		if(event.getLevel() == Level.INFO || event.getLevel() == Level.FATAL)
+		return ACCEPT;
+		else return DENY;
+	}
+
+}
+
+-----------------------------------Sample program End ----------------------------------
+
+9) Explain any three characters used in ConversionPattern for patternlayout?
+Ans : #p----> Priority level
+#d{format}----> Date & Time
+#r-----> milisec elapsed for making of layout
+#c-----> ClassName who envoked logger
+#t-----> Thread name
+#m-----> Log message
+#n-----> new Line
+
+10). If you want to write your logging information into multiple files then how will you proceed?
+Ans : To write your logging information into multiple files, you would have to use org.apache.log4j.RollingFileAppender class which extends the FileAppender class and inherits all its properties.
+
+11). How will you generate your log files on a daily basis?
+Ans : To write your logging information into files on a daily basis, you would have to use org.apache.log4j.DailyRollingFileAppender class which extends the FileAppender class and inherits all its properties.
+
+12). 6. The properties file is written in
+a. text format
+b. Set of key-value pairs
+c. Both of the above 
+d. None of the above
+
+13). 9. When we define the root logger in configuration file "log4j.rootLogger= debug , console". What does debug implies-
+a. The logging must be like debugging.
+b. The logging should start from debug level.
+c. The debugging must be done in console.
+d. All of the above.
+
+14) Mention what are the different types of Appenders?
+ConsoleAppender logs to standard output
+FileAppender prints logs to some file
+Rolling file appender to a file with maximum size
+JDBCAppender  for database,etc
+
+15). Components of Log4j?
+Ans: Log4j has three main components:
+	• loggers: Responsible for capturing logging information.
+	• appenders : Responsible for publishing logging information to various preferred destinations.
+	• layouts: Responsible to format logging information in different styles.
+
+16). Features of Log4j?
+Ans :   thread-safe.
+	optimized for speed.
+	supports internationalization.
+	based on a named logger hierarchy.
+	not restricted to a predefined set of facilities.
+	supports multiple output appenders per logger.
+	Logging behavior can be set at runtime using a configuration file.
+
+17). Architecture of Log4j ?
+Ans : Log4j has layered architecture. Each layer provides different objects to perform different tasks.
+ 	Two types of objects in Log4j :
+
+	• Core Objects (mandatory objects)
+ 	Logger Object – capture logging information
+ 	Layout Object – format logging information in different styles
+ 	Appender Object – publish logging information to various destinations
+
+	• Support Objects (optional objects)
+ 	Level Object – defines the granularity and priority of logging information
+ 	Filter Object – analyse logging information
+ 	ObjectRenderer – provide a String representation of different objects
+ 	LogManager – manages the logging framework
+
+18). Explain whether log4j is a thread safe?
+Ans : Log4j is a thread safe, log4j components are built to be used in multithread systems.
+
+19). Mention what does .class mean in log4j context?
+Ans : In log4j context, .class is used to get the full name of your class and that string is used to configure this logger object.  For example, logger.getlogget (Myclass.class)
+
+20). In log4j how can you log into the database?
+Ans :Using JDBCAppender. The log4j API provides the object org.apache.log4j.jdbc. JDBCAppender object can put logging information in a particular database.
