@@ -1,0 +1,67 @@
+package com.tech.web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MyBackend
+ */
+@WebServlet("/MyBackend")
+public class MyBackend extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public MyBackend() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("welcome you called the server");
+		
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		out.print("hello this is form server "+"<br>");
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String name=request.getParameter("user");
+		int age=Integer.parseInt(request.getParameter("age"));
+		
+		out.println("Your Name -->"+name+"<br>");
+		out.println("Your Age -->"+age+"<br>");
+		if(age<18) {
+			
+			out.println("\n Not eligible for vote"+"<br>");
+		}
+		else {
+			out.println("eligible for vote  "+"<br>");
+		}
+		
+		
+		
+		//creating cookie for session storing 
+		/*
+		 * created by server and stored in broser*/
+		Cookie cookie = new Cookie("mykey1",name);
+		
+		response.addCookie(cookie);
+		
+		out.print("<a href=Second>"+"go to second"+"</a>");
+		
+	
+	}
+
+}
