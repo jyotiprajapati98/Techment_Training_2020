@@ -1,0 +1,46 @@
+//binary to decimal 
+
+
+package com.tech.problemStatements;
+import java.util.*;
+public class BinaryToDecimal_Ex_48 {
+	
+	public int BinaryToDecimalConvert(int binary){
+		
+		int decimal=0;
+		int power=0;
+		
+		//while loop
+		while(true) {
+			
+			if(binary==0) {
+				break;
+			}
+			else {
+				int temp=binary % 10;
+				decimal=(int) (decimal + temp*Math.pow(2,power));
+				binary = binary /10;
+				power++;
+			}
+		}//while loop closed here 
+		return decimal;
+		
+
+	}
+
+
+	public static void main(String[] args) {
+		
+		BinaryToDecimal_Ex_48 bd=new BinaryToDecimal_Ex_48();
+		
+		System.out.println("Enter the binary number");
+		Scanner scan =new Scanner(System.in);
+		
+		int binary=scan.nextInt();
+		int decimal=bd.BinaryToDecimalConvert(binary);
+		
+		System.out.println("Decimal"+decimal);
+		
+	}
+	
+}

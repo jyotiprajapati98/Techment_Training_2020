@@ -1,0 +1,30 @@
+package com.tech.problemStatements;
+
+import java.util.*;
+
+class ChildThread extends Thread{
+	//variable initialize
+	int dollers;
+	
+	//constructor
+	ChildThread(int dollers){
+		
+		super();
+		this.dollers=dollers;
+	}
+	
+	//run method that is default in thread
+	public void run() {
+		
+	}
+	
+	
+} 
+public class ParallelMultiThread {
+
+	public static void main(String[] args) {
+		System.out.print("*");
+
+	}
+
+}

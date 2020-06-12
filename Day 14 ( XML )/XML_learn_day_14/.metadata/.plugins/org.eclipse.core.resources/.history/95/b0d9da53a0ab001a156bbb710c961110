@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this is comment -->
+<!-- rules -
+	1)Every tag should have a closing tag
+	2)it is case sensitive 
+	3)there should be one root tag
+	
+ -->
+<employee>
+	<id>1001</id>
+	<name>Jyoti</name>
+
+</employee>

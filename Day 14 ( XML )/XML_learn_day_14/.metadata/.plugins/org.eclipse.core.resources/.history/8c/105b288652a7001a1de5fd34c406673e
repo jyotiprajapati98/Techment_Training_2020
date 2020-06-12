@@ -1,0 +1,39 @@
+/*
+ * 
+ * print pattern
+ * 1 2 3 4 5 6 5 4 3 2 1 
+     1 2 3 4 5 4 3 2 1 
+       1 2 3 4 3 2 1 
+         1 2 3 2 1 
+           1 2 1 
+             1 
+  */
+
+
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class ReversePyramid {
+
+	public static void main(String[] args) {
+		
+		int rows=5;
+		
+		//System.out.println(" Number of rows you want --");
+		//Scanner scan=new Scanner(System.in);
+		//rows=scan.nextInt();
+		
+		//print logic here 
+		
+		for(int i=1;i<rows;i++) {
+			
+			for(int j=1;j<rows;--j) {
+				System.out.print(" "+j);
+			}
+			System.out.println("");
+		}
+
+	}
+
+}

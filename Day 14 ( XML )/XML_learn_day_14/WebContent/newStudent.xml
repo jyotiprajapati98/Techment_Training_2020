@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studentName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="StudentXMLSchema.xsd">
+  <name>Jyoti</name>
+  <branch>CSE</branch>
+  <age>20</age>
+  <contact>989345436</contact>
+</studentName>

@@ -1,0 +1,12 @@
+package com.tech.problemStatements;
+
+public class CommandLine {
+
+	public static void main(String[] args) {
+		  
+		//making arraylist collection for taking input
+	 
+			System.out.println(args[0]); 
+	}
+
+}

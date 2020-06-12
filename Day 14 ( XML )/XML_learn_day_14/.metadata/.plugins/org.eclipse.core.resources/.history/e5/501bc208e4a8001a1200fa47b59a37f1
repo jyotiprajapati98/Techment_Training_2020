@@ -1,0 +1,22 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class StackImplementation_Ex_41 {
+
+	public static void main(String[] args) {
+		
+		int capacity;
+		System.out.println("enter capacity of stack");
+		Scanner scan =new Scanner(System.in);
+		capacity=scan.nextInt();
+		
+		int stackArray[]=new int[capacity];
+		int top=-1;
+		
+		
+		
+
+	}
+
+}

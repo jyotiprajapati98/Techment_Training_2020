@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT students (student+)>
+<!ELEMENT student (id,rollNum,name+,branch,age,contact)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT rollNum (#PCDATA)>
+<!ELEMENT name (firstname,lastname)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT branch (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT contact (#PCDATA)>

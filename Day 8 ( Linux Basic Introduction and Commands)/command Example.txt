@@ -1,0 +1,48 @@
+28  cat>test2.js                                                                                                        
+29  cat test2.js                                                                                                                                                                                                               
+32  pwd                                                                                                                 
+33  nano test.js                                                                                                        
+34  vi test.js                                                                                                          
+35  rm test.js                                                                                                          
+36  move test.js test3.js                                                                                               
+37  mv test.js test3.js                                                                                                 
+38  rename test.js test3.js                                                                                             
+39  mv test.js test3.js                                                                                                 
+40  ls                                                                                                                  
+41  rm test                                                                                                             
+42  touch test.js                                                                                                       
+43  mv test2.js                                                                                                         
+44  mv test3.js                                                                                                         
+45  mv test.js test3.js                                                                                                 
+46  ls                                                                                                                  
+47  rmdir Downloads                                                                                                     
+48  ls                                                                                                                  
+49  mkdir Documents/mydir                                                                                               
+50  ls Documents                                                                                                        
+51  rmdir Documents                                                                                                     
+52  rm -rvf Documents                                                                                                   
+53  man                                                                                                                 
+54  man man                                                                                                             
+55  man ls                                                                                                              
+56  history                                                                                                             
+57  clear                                                                                                               
+58  nano content.txt                                                                                                    
+59  cat content.txt                                                                                                     
+60  pr -n content.txt                                                                                                   
+61  history                                                                                                             
+62  pr -2 content.txt                                                                                                   
+63  cat content.txt                                                                                                     
+64  pr -h "header" content.txt                                                                                          
+65  pr -h "This is header" content.txt                                                                                  
+66  nano content.txt                                                                                                    
+67  cat content2.txt                                                                                                    
+68  cat>content2.txt                                                                                                    
+69  pr -h "This is header" content2.txt                                                                                 
+70  history                                                                                                             
+71  lpr 12 content2.txt                                                                                                 
+72  lp 12 content2.txt                                                                                                  
+73  sudo apt install lpr                                                                                                
+74  lpr 12 content2.txt                                                                                                 
+75  lpr content2.txt                                                                                                    
+76  lpr -h                                                  
+82  history  

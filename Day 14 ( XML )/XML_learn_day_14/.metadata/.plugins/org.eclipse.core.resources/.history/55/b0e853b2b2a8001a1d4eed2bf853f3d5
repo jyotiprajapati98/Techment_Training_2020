@@ -1,0 +1,23 @@
+/*
+ * print pattern
+ * 
+1234554321
+1234 4321
+123 321
+12 21
+1 1
+
+
+ * 
+ * */
+
+package com.tech.problemStatements;
+
+public class Pattern_Ex_36 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

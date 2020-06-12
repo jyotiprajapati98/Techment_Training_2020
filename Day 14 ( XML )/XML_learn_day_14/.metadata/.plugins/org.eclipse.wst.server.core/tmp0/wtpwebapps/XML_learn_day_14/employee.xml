@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this is comment -->
+<!-- rules -
+	1)Every tag should have a closing tag
+	2)it is case sensitive 
+	3)there should be one root tag
+	4)attribute value should be in single 
+	or double quotes
+	
+ -->
+ <employee>
+	<employee>
+		<id>1001</id>
+		<name>Jyoti</name>
+	
+	</employee>
+	
+	<employee>
+		<id>1002</id>
+		<name>Shreyansh</name>
+	
+	</employee>
+	
+	<employee>
+		<id>1003</id>
+		
+	</employee>
+</employee>

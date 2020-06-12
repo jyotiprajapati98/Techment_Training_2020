@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+	<h1>fill the form</h1>
+	
+	<form action="MyBackend" method="get">
+	username : <input type="text" name="user"/>
+	
+	age :<input type="text" age="age"/>
+	
+	<input type="submit" value="check eligibility"/>
+	
+	</form>
+
+
+</body>
+</html>

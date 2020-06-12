@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this is for student entity -->
+
+<!DOCTYPE students SYSTEM "Student_Sturcture.dtd">
+
+
+<students>
+
+	<student>
+		<id>1</id>
+		<rollNum>301</rollNum>
+		<name>
+			<firstname>Aishwarya</firstname>
+			<lastname>soni</lastname>
+		</name>
+		<branch>CSE</branch>
+		<age>20</age>
+		<contact>8034345465</contact>
+	</student>
+	
+	<student>
+		<id>2</id>
+		<rollNum>302</rollNum>
+		<name>
+			<firstname>shivani</firstname>
+			<lastname> </lastname>
+		</name>
+		<branch>IT</branch>
+		<age>21</age>
+		<contact>9867545676</contact>
+	</student>
+	
+	<student>
+		<id>3</id>
+		<rollNum>303</rollNum>
+		<name>
+			<firstname>Piyush</firstname>
+			<lastname>Singh</lastname>
+		</name>
+		<branch>Civil</branch>
+		<age>23</age>
+		<contact>8723435674</contact>
+	</student>
+	
+	
+</students>

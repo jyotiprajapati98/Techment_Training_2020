@@ -1,0 +1,42 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class ArithmeticException extends Exception {
+
+	public static void main(String[] args) {
+		
+		//variable here
+		int num1,num2,quotient;
+		
+		//scanner object here
+		Scanner scan=new Scanner(System.in);
+		System.out.println(" enter first number");
+		num1=scan.nextInt();
+		
+		System.out.println(" enter second number");
+		num2=scan.nextInt();
+	//try catch finally blocks start from here 
+		try {
+			
+			if(num2==0) {
+				throw new ArithmeticException();
+			}
+			else {
+				
+				System.out.println(" qoutient of"+num1 +"/"+num2 +"=" +num1/num2);
+			}
+			
+		}
+		catch(ArithmeticException e){
+			
+			System.out.println("Divid by zero exception here");
+		}
+		finally {
+			System.out.println("Inside finally block ");
+		}
+		
+		
+	}
+
+}

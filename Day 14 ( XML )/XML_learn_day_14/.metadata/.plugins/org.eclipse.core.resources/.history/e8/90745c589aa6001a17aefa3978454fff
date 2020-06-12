@@ -1,0 +1,36 @@
+
+/*
+ * print pattern
+ 
+    	  5 
+        4 5 4 
+      3 4 5 4 3 
+    2 3 4 5 4 3 2 
+  1 2 3 4 5 4 3 2 1 
+
+ * */
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class PyramidPatternEx12 {
+
+	public static void main(String[] args) {
+		int rows;
+		System.out.println(" how many rows you want ot print ");
+		Scanner scan=new Scanner(System.in);
+		
+		rows=scan.nextInt();
+		
+		//outer loop for print spaces for line 
+		for(int i=rows;i>=1;i-- ) {
+			 
+			for(int j=1;j<=i*2;j++) {
+				
+				System.out.print(" "+j);
+			}
+			System.out.println(" ");
+		}
+	}
+
+}

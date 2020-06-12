@@ -1,0 +1,33 @@
+
+/*
+ * print pattern
+ 
+    	  5 
+        4 5 4 
+      3 4 5 4 3 
+    2 3 4 5 4 3 2 
+  1 2 3 4 5 4 3 2 1 
+
+ * */
+package com.tech.problemStatements;
+
+public class PyramidPatternEx12 {
+
+	public static void main(String[] args) {
+	int rows=5;
+		
+		//outer loop for rows 
+		for(int i=5;i>0;i++ ) {
+			
+			
+			//inner loop for printing 
+			//column print is less by 1 every time 
+			for(int j=1;j<=rows-i+1;j++) {
+				
+				System.out.print(" "+j);
+			}
+			System.out.println(" ");
+		}
+	}
+
+}

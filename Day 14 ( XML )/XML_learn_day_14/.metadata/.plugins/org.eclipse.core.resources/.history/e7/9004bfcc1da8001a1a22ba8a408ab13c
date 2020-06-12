@@ -1,0 +1,22 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class ValidatePin_Ex_28 {
+
+	public static void main(String[] args) {
+		
+		//variables
+		int atmPin=12345;
+		
+		System.out.println("Enter you pin -- ");
+		Scanner scan=new Scanner(System.in);
+		
+		int enteredPin=scan.nextInt();
+		
+		//now logic to check continue
+		while(enteredPin != atmPin)
+		
+	}
+
+}

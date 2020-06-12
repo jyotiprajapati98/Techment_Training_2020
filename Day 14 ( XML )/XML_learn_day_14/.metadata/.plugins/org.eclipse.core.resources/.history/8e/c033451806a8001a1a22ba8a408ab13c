@@ -1,0 +1,10 @@
+package com.tech.problemStatements;
+
+public class ParallelMultiThread {
+
+	public static void main(String[] args) {
+		System.out.print("*");
+
+	}
+
+}

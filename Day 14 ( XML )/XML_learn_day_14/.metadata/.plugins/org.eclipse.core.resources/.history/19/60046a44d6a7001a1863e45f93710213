@@ -1,0 +1,9 @@
+package com.tech.problemStatements;
+
+public class CommandLineArguments {
+
+	public static void main(String args[]) {
+		System.out.println(" command line arguments"+args[0]);
+	}
+
+}

@@ -1,0 +1,56 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class CommArray {
+
+	public static void main(String[] args) {
+
+		//variables initialize here
+		int numberOfElements;
+		
+		//scanning the user input
+		System.out.println(" size of  array ");
+		Scanner scan=new Scanner(System.in);
+		numberOfElements=scan.nextInt();
+		
+		//initializing tow array with same size 
+		//array 1
+		int array1[]=new int[numberOfElements];
+		
+		//array2
+		int array2[]=new int[numberOfElements];
+		
+		System.out.println(" first array elements ");
+		//for loop for inserting elements in first array 
+		for(int i=0;i<array1.length;i++) {
+			
+			array1[i]=scan.nextInt();
+		}
+	
+		System.out.println(" second array elements ");
+		//for loop for inserting elements in second array 
+		for(int i=0;i<array1.length;i++) {
+			
+			array1[i]=scan.nextInt();
+		}
+		
+		//compare the both arrays
+		
+		for(int i=0;i<numberOfElements;i++) {
+			
+			if(array1[i]==array2[i]) {
+				System.out.println(" same ");
+				break;
+			}
+			else {
+				System.out.println("Not same ");
+			}
+			
+		}
+		
+	
+
+	}
+
+}

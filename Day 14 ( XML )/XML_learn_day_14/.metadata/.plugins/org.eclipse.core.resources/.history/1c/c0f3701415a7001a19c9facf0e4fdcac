@@ -1,0 +1,29 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class CommArray {
+
+	public static void main(String[] args) {
+
+		//variables initialize here
+		int numberOfElements;
+		
+		//scanning the user input
+		System.out.println(" number of elements in array ");
+		Scanner scan=new Scanner(System.in);
+		numberOfElements=scan.nextInt();
+		
+		//initializing tow array with same size 
+		//array 1
+		int array1[]=new int[numberOfElements];
+		
+		//array2
+		int array2[]=new int[numberOfElements];
+		
+		
+		
+
+	}
+
+}

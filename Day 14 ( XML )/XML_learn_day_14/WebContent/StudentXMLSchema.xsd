@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- xmlns-xml namespace
+xmlns: xs is just name space 
+
+xsd - xml schema definition
+ -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="studentName">
+  <xs:complexType>
+   <xs:sequence>
+     <xs:element name="name" type="xs:string"/>
+     <xs:element name="branch" type="xs:string"/>
+     <xs:element name="age" type="xs:int"/>
+      <xs:element name="contact" type="xs:int"/>
+   </xs:sequence>
+<xs:attribute name="title" type="xs:string"/>
+</xs:complexType>
+
+</xs:element>
+     
+</xs:schema>

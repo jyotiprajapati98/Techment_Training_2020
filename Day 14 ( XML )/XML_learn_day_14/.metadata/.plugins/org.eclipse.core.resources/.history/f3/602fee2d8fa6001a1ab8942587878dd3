@@ -1,0 +1,50 @@
+/*
+ * java code is for displaying  n prime number */
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+		
+		//variables here 
+		int number;
+		int primeFlag;
+		
+		//print message to taking input
+		System.out.println("how any prime number you want ot print --");
+		
+		//for scanning user input
+		Scanner scan =new Scanner(System.in);
+		number=scan.nextInt();
+		
+		//for loop for traversing 
+		for(int i=1;i<=number;i++) {
+			
+			//skip the 0 and 1 they are not prime
+			
+			if(number ==1 || number ==0) {
+				
+				break;
+			}
+			
+			//prime flag tell the number is prime or not
+			primeFlag =1;
+			
+			for(int j=2;j<= i / 2 ;++j) {
+				
+				if(i%j==0)
+					primeFlag =0;
+					break;
+				
+			}
+			
+		if(primeFlag==1) {
+				System.out.println(i +" ");
+			}
+		}
+		
+	}
+
+}

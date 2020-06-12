@@ -1,0 +1,31 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class IndexOutOfBoundException {
+
+	public static void main(String[] args) {
+		
+		int size;
+		Scanner scan=new Scanner(System.in);
+		size=scan.nextInt();
+		
+		int[]array=new int[size];
+		
+		for(int i=0;i<size;i++) {
+			
+			array[i]=scan.nextInt();
+		}
+		
+		//checking the index out of  bound condition
+		System.out.println(" enter index which you want to print");
+		
+		try {
+			int find=scan.nextInt();
+			System.out.println("Given value is "+array[find]);
+		}
+		
+		
+	}
+
+}

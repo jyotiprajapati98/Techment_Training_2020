@@ -1,0 +1,96 @@
+
+MariaDB [EMPLOYEE]> select * from emp1;
++--------+--------+-------------+--------+----+
+| NAME   | salary | dept        | city   | ID |
++--------+--------+-------------+--------+----+
+| Jyoti  |  50000 | Development | Mumbai |  1 |
+| Akash  |  45000 | Research    | Bhilai |  2 |
+| rakes  |  30000 | Teaching    | Bhilai |  3 |
+| Riya   |  30000 | Teaching    | Kanpur |  4 |
+| Pooja  |  38000 | TCS         | Bhilai |  5 |
+| tushar |  38000 | TCS         | Bhilai |  6 |
+| tejas  |  60000 | govt        | Bhilai |  7 |
++--------+--------+-------------+--------+----+
+
+
+1)write a query to fetch employee names whose name ends with 's'
+ and has five character
+
+MariaDB [EMPLOYEE]> select name from emp1 where name like '%____s';
++-------+
+| name  |
++-------+
+| rakes |
+| tejas |
++-------+
+2 rows in set (0.00 sec) 
+
+2)count the employee in each deptartment
+
+MariaDB [EMPLOYEE]> select dept ,count(id) from emp1 group by dept;
++-------------+-----------+
+| dept        | count(id) |
++-------------+-----------+
+| Development |         1 |
+| govt        |         1 |
+| Research    |         1 |
+| TCS         |         2 |
+| Teaching    |         2 |
++-------------+-----------+
+5 rows in set (0.00 sec)
+
+
+3)dept wise show the minimum salary
+MariaDB [EMPLOYEE]> select dept ,min(salary) from emp1 group by dept;
++-------------+-------------+
+| dept        | min(salary) |
++-------------+-------------+
+| Development |       50000 |
+| govt        |       60000 |
+| Research    |       45000 |
+| TCS         |       38000 |
+| Teaching    |       30000 |
++-------------+-------------+
+5 rows in set (0.06 sec)
+
+
+
+4)show only those dept name whose max salary is > 60000
+MariaDB [EMPLOYEE]> select dept ,salary >60000 from emp1 group by dept;
++-------------+---------------+
+| dept        | salary >60000 |
++-------------+---------------+
+| Development |             0 |
+| govt        |             0 |
+| Research    |             0 |
+| TCS         |             0 |
+| Teaching    |             0 |
++-------------+---------------+
+5 rows in set (0.00 sec)
+
+5)find the second highest salary from employee.
+MariaDB [EMPLOYEE]> select max(salary) from emp1 where salary < (select max(salary) from emp1);
++-------------+
+| max(salary) |
++-------------+
+|       50000 |
++-------------+
+1 row in set (0.03 sec)
+
+
+6)show the all employee names except tester
+
+select * from emp1 where dept NOT IN('tester') ;
+
+MariaDB [EMPLOYEE]> select * from emp1 where dept NOT IN('Teaching') ;
++--------+--------+-------------+--------+----+
+| NAME   | salary | dept        | city   | ID |
++--------+--------+-------------+--------+----+
+| Jyoti  |  50000 | Development | Mumbai |  1 |
+| Akash  |  45000 | Research    | Bhilai |  2 |
+| Pooja  |  38000 | TCS         | Bhilai |  5 |
+| tushar |  38000 | TCS         | Bhilai |  6 |
+| tejas  |  60000 | govt        | Bhilai |  7 |
++--------+--------+-------------+--------+----+
+5 rows in set (0.00 sec)
+

@@ -1,0 +1,158 @@
+Introduction to DBMS and NoSql  (3 days)
+---------------------------------------
+Data:information (raw facts) ,i.e) the information can be any thing
+     eg:name,id,password,train name,source,destination,marks,sales
+
+Database:collection of similar data
+         eg:train database-->it stores only about tarin info->source,destination,trainno,..etc
+             student database-->stuid,name,marks..,
+            employee database--->empid,empname,salary,designation..
+
+Database Management System:
+                    --> storing the record in the system...
+                     tell me DBMS software,
+                        1)oracle,mysql,sqlserver,....etc
+                        all the above database follows RDBMS concepts
+
+RDBMS:
+   in rdbms the records are stored in the form of tables and tables will have relationship
+    table-->row and columns-->
+Relationship:
+==============================================================
+Database: Oracle,Mysql....It is based on RDBMS..
+Sql:It is structured Query Language
+    It is used to store,update,reterive the record into database..
+    It is command based language,Every command has meaning...
+    
+SQl Sub Language:
+1)DDL
+2)DML
+3)DQL
+4)TCL
+5)DCL
+----------------------------------------------
+1)DDL--(data definition language)-->dr.cat  -->admin
+    this commnads are only related to tables not the record
+    i,e) we can create only structure of the table
+      d-drop--->it will delete the table,(record + structure) will be deleted
+      r-rename-->we can rename the table name
+      c-create-->we can create a new table
+      a-alter--->we can change the structure
+                 alter add------------->we can a new column to the existing table
+                 alter modify---------->we can change the data type or size
+                 alter rename/change--->we change the column name
+                 alter drop-------->we can drop the column
+                 
+      t-truncate--->structure will remain..records will be deleted
+Note: yu should know about database
+
+2)DML:data manipulation language
+      I-->insert
+      U-->update
+      D-->delete
+
+3)DQL:data query language
+     s-->select(reterive)
+
+Note:
+we should know about sql clauses,operator
+operation--> 
+  +,-,*,/,
+  and,or,not,
+  in,any,between,like
+
+clauses: 
+    where
+    order by
+    group by
+    having
+
+4)TCL:Transaction control Language
+     transaction--->it need to debit from sender account and credit in receiver account
+   c-->commit-->permanently saved...once we do commit we cannot do changes
+   r-->rollback-->it will go to last commited state
+   s-->savepoint-->we can create temperory savepoint..              
+
+5)DCL-->data control language
+       giving access
+
+=================================================================
+arithmetic operator:
+
+the company wants to give bonus of 10000 to each employee,
+with salary if it is less than 50000 then only it should give
+show only those names
+
+find perday salary of emp
+======================================
+sql clause:
+where: it is used to filter record based on some condition
+order by:it is used for sorting the data-->ascending or descending
+group by:we can make subset of record or similar values into one group
+         while using group by we have to use aggregate function
+         
+         scalar
+         sachine   ucase(name)-->  Sachine
+         ramesh                    Ramesh
+       
+         aggregate function:
+         1000       sum(salary)--->3700
+         2000
+         700
+
+Having : it is used to filter aggregate function..mostly it will use along with group by
+=====================================================================================
+
+between --> it is used fiter the record between the range
+           
+like-->it is used for pattern search----> 
+       like operator===>  _ and %
+       _ ==> it indicates exactly one character
+       %==> it indicates zero,one or more character
+
+
+in-->  where salary=10000    -----  where salary in(1000,2000,3000)
+any-->                              where salary > any(1000,2000,5000)    700,2000,9000,500
+all-->                              where salary > all(1000,2000,5000)    700,2000,9000,500
+============================================================         
+sql function:
+----------------
+characater function
+date function
+number function
+
+aggregate function:
+=============================================================
+
+sql constraint
+sql set operator
+sql join
+sql subquery
+=============================================================
+
+set operator:
+-----------------
+1)union 
+2)union all
+3)intersect
+4)minus
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+        
+
+         
+
+
+

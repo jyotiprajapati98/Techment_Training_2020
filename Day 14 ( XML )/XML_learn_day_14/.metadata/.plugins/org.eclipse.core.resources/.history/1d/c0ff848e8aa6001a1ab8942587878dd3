@@ -1,0 +1,24 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class TermSeries {
+
+	public static void main(String[] args) {
+		int termOfSeries=0;
+		System.out.println(" enter number of time you want ot print series");
+		Scanner scan = new Scanner(System.in);
+		int series=scan.nextInt();
+		
+		// loop for printing the series
+		for(int i=1;i<series;i++) {
+			
+			termOfSeries=i*i*i;
+			System.out.println("" +termOfSeries );
+			
+			
+		}
+		
+	}
+
+}

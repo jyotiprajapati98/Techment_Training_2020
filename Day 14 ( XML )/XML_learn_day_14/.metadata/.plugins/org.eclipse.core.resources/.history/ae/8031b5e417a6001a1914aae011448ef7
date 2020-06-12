@@ -1,0 +1,39 @@
+package com.tech.problemStatements;
+
+import java.util.Scanner;
+
+public class SoldierNumber {
+
+	public static void main(String[] args) {
+		
+		//variables are here 
+		
+		int firstnum,lastnum,currentnum;
+		
+		//scan is object of scanner
+		Scanner scan=new Scanner(System.in);
+		
+		//fisrt number 
+		System.out.println("Enter first soldier number--");
+		firstnum=scan.nextInt();
+		
+		//last number 
+		System.out.println("Enter last  soldier number--");
+		lastnum=scan.nextInt();
+		
+		//currently called person
+		System.out.println("Enter currently called  soldier number--");
+		currentnum=scan.nextInt();
+		
+		//for loop for checking current number is between fisrt and last or not
+		if(currentnum<=lastnum)
+		{
+			System.out.println("valid number");
+		}
+		else {
+			System.out.println("invalid number");
+		}
+
+	}
+
+}

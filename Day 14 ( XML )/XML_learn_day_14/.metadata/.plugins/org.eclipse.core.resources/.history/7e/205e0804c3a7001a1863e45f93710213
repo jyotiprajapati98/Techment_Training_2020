@@ -1,0 +1,25 @@
+package com.tech.problemStatements;
+import java.util.*;
+
+class Product{
+	
+	private int product_id;
+	private String product_name;
+	private float product_price;
+	
+	//getting id
+	public int gettingID() {
+		 return product_id;
+	}
+	
+	public 
+}
+public class ProductCatalogue {
+
+	public static void main(String[] args) {
+		//variable initialize here
+		
+		
+	}
+
+}
