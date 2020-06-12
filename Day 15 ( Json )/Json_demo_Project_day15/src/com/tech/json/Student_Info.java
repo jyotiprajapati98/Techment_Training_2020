@@ -31,11 +31,4 @@ public class Student_Info {
 			this.branch=branch;
 		}
 		
-		//get()  & set() for  contact number of student
-		public int getContact() {
-			return rollNo;
-		}
-		public void setRollNo(int rollNo) {
-			this.rollNo=rollNo;
-		}
 }
