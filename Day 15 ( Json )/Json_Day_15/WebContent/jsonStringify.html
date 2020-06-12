@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<script>
+
+document.write("<br>-------Json------------<br>");
+
+var company={
+		//employee is an array name
+		"employee":
+		[
+			{"id":1,"name":"Jyoti"},
+			{"id":2,"name":"Siya"},	
+		],
+		"companyName":"Google"
+		
+};
+document.write(company+"<br>");
+var mystr=JSON.stringify(company);
+document.getElementById("demo").innerHTML = mystr;
+
+///document.write(mystr);
+</script>
+</body>
+</html>

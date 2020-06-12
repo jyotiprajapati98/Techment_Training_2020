@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Afternoon Menu</h2>
+	
+	<script>
+	
+	var menu={
+			
+			"cusines":[
+				{"sno":1,"name":"kabab"},
+				{"sno":2,"name":"Pasta"},
+			],
+			"menu1":"cusines",
+			
+			"snacks":[
+				{"sno":1,"name":"pizza"},
+				{"sno":2,"name":"sweet potato"},
+			],
+			"menu2":"snacks",
+	};
+	document.write(menu.menu1+"<br>");
+	document.write("-------------");
+	document.write("<br>");
+	for(i in menu.cusines){
+		
+		document.write("|"+menu.cusines[i].sno +" | "+menu.cusines[i].name+" |"+"<br>");
+	}
+	
+	document.write("<br>");
+	document.write(menu.menu2+"<br>");
+	document.write("-------------");
+	document.write("<br>");
+	for(i in menu.snacks){
+		document.write("|"+menu.snacks[i].sno +" | "+menu.snacks[i].name+" |"+"<br>");
+	}
+	
+	
+	</script>
+</body>
+</html>

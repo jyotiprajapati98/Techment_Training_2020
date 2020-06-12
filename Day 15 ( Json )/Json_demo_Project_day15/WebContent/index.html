@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Form</title>
+
+<link rel="stylesheet" type="style/text" href="style.css">
+</head>
+
+<!-- styling of page -->
+<style>
+body{
+	background-color:powderblue;
+}
+form{
+	height:300px;
+	width:400px;
+	background-color:gray;
+	padding:20px;
+	color:white;
+	margin-left:200px;
+	margin-top:100px;
+}
+input[type=number]{
+	margin-left:20px;
+	margin-top:20px;
+	padding:10px;
+	width:250px;
+}
+input[type=text]{
+	margin-top:20px;
+	padding:10px;
+	width:250px;
+}
+input[type=submit]{
+	margin-top:20px;
+	padding:10px;
+	margin-left:100px;
+	width:180px;
+}
+</style>
+<body>
+
+<form action="myjavafile1">
+	
+	 ID: <input type="number" name="user_id"/><br>
+	 Name: <input type="text" name="user_name"/><br>
+	 age: <input type="number" name="user_age"/><br>
+	
+	<input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html>
