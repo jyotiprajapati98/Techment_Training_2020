@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="44374c51-63cf-4de2-8de0-5116984a1e6c" activeEnvironment="Default" name="newSoapProject" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="19156175-f5f0-4a17-82fa-5ab03ec1746f" wsaVersion="NONE" name="Soap_DemoSoapBinding" type="wsdl" bindingName="{http://tech.soap.com}Soap_DemoSoapBinding" soapVersion="1_1" anonymous="optional" definition="Soap_Demo.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\hp\eclipse-workspace-webApp\Soap_demo\WebContent\wsdl\Soap_Demo.wsdl"><con:part><con:url>file:\C:\Users\hp\eclipse-workspace-webApp\Soap_demo\WebContent\wsdl\Soap_Demo.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tech.soap.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://tech.soap.com" xmlns:intf="http://tech.soap.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://tech.soap.com" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="add">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="addResponse">
+        <complexType>
+          <sequence>
+            <element name="addReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="addRequest">
+    <wsdl:part element="impl:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="impl:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Soap_Demo">
+    <wsdl:operation name="add">
+      <wsdl:input message="impl:addRequest" name="addRequest"></wsdl:input>
+      <wsdl:output message="impl:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Soap_DemoSoapBinding" type="impl:Soap_Demo">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Soap_DemoService">
+    <wsdl:port binding="impl:Soap_DemoSoapBinding" name="Soap_Demo">
+      <wsdlsoap:address location="http://localhost:8082/Soap_demo/services/Soap_Demo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8082/Soap_demo/services/Soap_Demo</con:endpoint></con:endpoints><con:operation id="e743cefc-8321-4bb1-ab7c-0524aa368f36" isOneWay="false" action="" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="addRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd7926a0-4fe0-4b27-be7c-899aee317052" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/Soap_demo/services/Soap_Demo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tech="http://tech.soap.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tech:add>\r
+         <tech:a>?</tech:a>\r
+         <tech:b>?</tech:b>\r
+      </tech:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tech.soap.com/Soap_Demo/addRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="cd1af3a1-d511-49c2-8653-8d38a31c98dc" name="Soap_DemoSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d1005e82-191e-48d6-93a6-0b57aefc608b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="add TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="6a9de940-d853-4b39-8995-2267573e5054" name="add"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Soap_DemoSoapBinding</con:interface><con:operation>add</con:operation><con:request name="add" id="97daa7b5-0c82-40b8-8b71-ee824868f5da"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/Soap_demo/services/Soap_Demo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tech="http://tech.soap.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tech:add>\r
+         <tech:a>?</tech:a>\r
+         <tech:b>?</tech:b>\r
+      </tech:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tech.soap.com/Soap_Demo/addRequest"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
