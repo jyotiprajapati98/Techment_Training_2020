@@ -1,0 +1,73 @@
+{
+    "category":[
+        {
+            "id":1,
+            "name":"Chinese"
+        },
+        {
+            "id":2,
+            "name":"Italian"
+        },
+        {
+            "id":3,
+            "name":"North-Indian"
+        },
+        {
+            "id":4,
+            "name":"South-Indian"
+        },
+        {
+            "id":4,
+            "name":"India Snacks"
+        }
+    ],
+    "hotels":[
+        {
+            "id":1,
+            "Img":"https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+            "name":"Hotel Rajgharana",
+            "address":"durg"
+            
+        },
+        {
+            "id":2,
+            "Img":"https://www.heritancehotels.com/wp-content/uploads/2016/02/heritance-six-mob.jpg",
+            "name":"Tajmahal of life",
+            "address":"bhilai"
+        }
+    ],
+    "foods":[
+        {
+            "id":1,
+            "name":"Paneer Kabab",
+            "Price":"Price : 250/"
+        },
+        {
+            "id":2,
+            "name":"Full Veg Thaali",
+            "Price":"Price : 350/"
+        },
+        {
+            "id":3,
+            "name":"Veg Green Snadwich",
+            "Price":"Price : 100/"
+        }
+    ],
+    "users":[
+        {
+            "id":1,
+            "name":"jyoti",
+            "password":"jyoti",
+            "address":"rajfamily"
+        }
+    ],
+    "order":[
+        {
+            "id":1,
+            "name":"jyoti",
+            "address":"rajfamily",
+            "food name":"Veg Green Snadwich",
+            "Price":"Price : 100/"
+        }
+    ]
+}
